@@ -15,4 +15,4 @@ jobs:
         with:
           file: ${{ env.COMPOSE_FILE }}
       - name: Spin up Fig
-        run: docker compose up
+        run: docker-compose up
