@@ -1,0 +1,3 @@
+- name: Spin-Up Docker Compose
+  uses: yu-ichiro/spin-up-docker-compose-action@v1.2
+

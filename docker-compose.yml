@@ -1,0 +1,6 @@
+version: '3.8'
+services:
+  hello_world:
+    build:
+      context: .
+    command: [/bin/echo, 'Hello world']
