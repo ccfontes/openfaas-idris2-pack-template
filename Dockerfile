@@ -1,5 +1,5 @@
 # https://github.com/openfaas/of-watchdog
-FROM openfaas/of-watchdog:0.9.10 as watchdog
+FROM openfaas/of-watchdog:0.8.2 as watchdog
 
 FROM ubuntu:20.04
 
