@@ -11,9 +11,6 @@ RUN apt-get update && apt-get install --yes make gcc curl git chezscheme libgmp3
 
 WORKDIR /home/app
 
-RUN groupadd app && useradd -g app app
-USER app:app
-
 # Needed for idris2_install script
 ENV HOME /home/app
 
@@ -25,6 +22,9 @@ ENV PATH $HOME/.pack/bin:$PATH
 RUN apt-get purge --yes make gcc curl git chezscheme libgmp3-dev && rm -rf /var/lib/apt/lists/*
 
 ## OpenFaaS ##
+
+RUN groupadd app && useradd -g app app
+USER app:app
 
 ENV mode="streaming"
 ENV fprocess="idris2 ./Index.idr --exec main"
