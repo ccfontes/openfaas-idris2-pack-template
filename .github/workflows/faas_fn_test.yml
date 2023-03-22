@@ -10,10 +10,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Provision faasd
-        - with:
+      - name: Setup Docker registry path
+        with:
           name: DOCKER_REGISTRY_IMG_PATH
           value: ghcr.io/ccfontes/function-example:latest
+      - name: Provision faasd
         run: |
           git clone https://github.com/openfaas/faasd --depth=1
           cd faasd
