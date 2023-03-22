@@ -23,8 +23,12 @@ RUN apt-get purge --yes make gcc curl git libgmp3-dev && rm -rf /var/lib/apt/lis
 
 ## OpenFaaS ##
 
-RUN groupadd app && useradd -g app app
-USER app:app
+# TODO fix these permissions
+# Function invoke time error:
+#   mkdir: cannot create directory '/home/app/.pack/.tmp0': Permission denied
+#   /home/app/.pack/bin/idris2: 7: [: missing ]
+# RUN groupadd app && useradd -g app app
+# USER app:app
 
 ENV mode="streaming"
 ENV fprocess="idris2 ./Index.idr --exec main"

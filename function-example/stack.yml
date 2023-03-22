@@ -3,7 +3,7 @@ provider:
   name: openfaas
   gateway: http://127.0.0.1:8080
 functions:
-  idris-example:
+  idris2-hello:
     lang: idris2-streaming
-    handler: ./idris2Hello
+    handler: ./idris2-hello
     image: ${DOCKER_REGISTRY_IMG_PATH}

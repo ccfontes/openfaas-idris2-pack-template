@@ -13,8 +13,13 @@ See https://docs.openfaas.com/tutorials/first-python-function/[OpenFaaS website]
 * https://docs.openfaas.com/cli/install/[OpenFaaS CLI]
 * OpenFaaS: to try in localhost, maybe deploy to https://github.com/openfaas/faasd[faasd]
 
-== Get the Idris 2 OpenFaaS template ==
-Follow the instructions in the https://github.com/ccfontes/openfaas-idris2-pack-template[openfaas-idris2-pack-template] repository.
+== Get OpenFaaS template ==
+
+Get the Idris 2 OpenFaaS template:
+[source, bash]
+----
+faas template pull https://github.com/ccfontes/openfaas-idris2-pack-template
+----
 
 == Environment variables
 
@@ -36,5 +41,7 @@ faas up
 Test the Function using the OpenFaaS UI or the following command:
 [source, bash]
 ----
-echo "test" | faas invoke Idris2Hello
+echo "test" | faas invoke idris2-hello
+
+Should ouput "test" string to the terminal.
 ----
