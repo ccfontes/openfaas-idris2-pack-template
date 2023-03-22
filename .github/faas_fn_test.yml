@@ -1,0 +1,37 @@
+name: OpenFaaS Function Test
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches-ignore:
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Provision faasd
+        - with:
+          name: DOCKER_REGISTRY_IMG_PATH
+          value: ghcr.io/ccfontes/function-example:latest
+        run: |
+          git clone https://github.com/openfaas/faasd --depth=1
+          cd faasd
+          ./hack/install.sh         
+      - name: Provision function-example Function
+        run: curl -sSL https://cli.openfaas.com | sudo -E sh
+      - name: Provision function-example Function
+        run: |
+          git clone https://github.com/ccfontes/openfaas-idris2-pack-template.git
+          cd openfaas-idris2-pack-template/function-example
+          faas template pull https://github.com/ccfontes/openfaas-idris2-pack-template
+          echo ${{ GITHUB_TOKEN }} |faas registry-login --username ccfontes --password-stdin --server ghcr.io
+          sudo cp credentials/config.json /var/lib/faasd/.docker/
+          sudo cat /var/lib/faasd/secrets/basic-auth-password | faas-cli login -s
+          # echo ${{ GITHUB_TOKEN }} | docker login ghcr.io -u ccfontes --password-stdin
+          faas up
+      - name: Test function-example Function invocation
+        run: |
+          if [ "$(echo "world" | faas-cli invoke idris2-hello)" != "Hello, world" ]; then
+            exit 1
+          fi
