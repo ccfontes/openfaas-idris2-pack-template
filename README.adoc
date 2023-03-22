@@ -20,7 +20,6 @@ Then create Idris 2 Functions as in the following command example:
 ----
 faas new --lang idris2-streaming my-idris2-function
 ----
-
 A new project is created. It will contain a `Function.Handler` namespace that is required for the template to work properly. The requirement for this namespace is to have a top-level function defined as `handler`.
 
 == Function example ==
@@ -73,7 +72,7 @@ docker-compose up
 
 Contributions are welcome! If you find a bug or have an idea for a new feature, please open an issue or submit a pull request.
 
-== https://github.com/ccfontes/openfaas-idris2-pack-template/LICENSE[License] ==
+== link:LICENSE[License] ==
 
 Copyright (c) 2023 Carlos da Cunha Fontes
 

@@ -42,6 +42,6 @@ Test the Function using the OpenFaaS UI or the following command:
 [source, bash]
 ----
 echo "world" | faas invoke idris2-hello
-
-Should ouput "Hello, world" string to the terminal.
 ----
+Should ouput "Hello, world" string to the terminal.
+
