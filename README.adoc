@@ -23,7 +23,7 @@ faas new --lang idris2-streaming my-idris2-function
 A new project is created. It will contain a `Function.Handler` namespace that is required for the template to work properly. The requirement for this namespace is to have a top-level function defined as `handler`.
 
 == Function example ==
-See the `function-example` directory to find a fully working example for an OpenFaaS Function using Idris 2.
+See the link:function-example[function-example] directory to find a fully working example for an OpenFaaS Function using Idris 2.
 
 == TODO ==
 - Pre-compile Idris 2 Function code
