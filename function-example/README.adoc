@@ -41,7 +41,7 @@ faas up
 Test the Function using the OpenFaaS UI or the following command:
 [source, bash]
 ----
-echo "test" | faas invoke idris2-hello
+echo "world" | faas invoke idris2-hello
 
-Should ouput "test" string to the terminal.
+Should ouput "Hello, world" string to the terminal.
 ----

@@ -1,5 +1,5 @@
-module IdrisExample.Handler
+module Function.Handler
 
 export
 handler : String -> String
-handler input = input
+handler input = "Hello, " ++ input
