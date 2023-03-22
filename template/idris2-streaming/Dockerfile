@@ -18,8 +18,8 @@ RUN curl -o idris2_install https://raw.githubusercontent.com/stefan-hoeck/idris2
 RUN sh -c "echo 'chezscheme' | bash ./idris2_install"
 
 COPY Index.idr .
+RUN mkdir -p Function
 COPY Function Function
-COPY Function function
 
 ENV PATH $HOME/.pack/bin:$PATH
 
