@@ -23,10 +23,10 @@ RUN apt-get purge --yes make gcc curl git libgmp3-dev && rm -rf /var/lib/apt/lis
 
 ## OpenFaaS ##
 
-# TODO fix these permissions
 # Function invoke time error:
 #   mkdir: cannot create directory '/home/app/.pack/.tmp0': Permission denied
 #   /home/app/.pack/bin/idris2: 7: [: missing ]
+# FIXME: fix errors above for this user:
 # RUN groupadd app && useradd -g app app
 # USER app:app
 
@@ -37,7 +37,8 @@ EXPOSE 8080
 
 HEALTHCHECK --interval=2s CMD [ -e /tmp/.lock ] || exit 1
 
-COPY --chown=app --from=watchdog /fwatchdog /usr/bin/fwatchdog
+# FIXME: add `--chown=app` to COPY below after permission errors are fixed 
+COPY --from=watchdog /fwatchdog /usr/bin/fwatchdog
 RUN chmod +x /usr/bin/fwatchdog
 
 CMD ["fwatchdog"]
