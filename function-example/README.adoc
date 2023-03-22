@@ -1,0 +1,40 @@
+== An OpenFaaS Function in Idris 2 ==
+
+Hello world OpenFaaS Function in Idris 2.
+
+See the `Idris2Hello` directory to find the Idris 2 Function code example.
+
+The following documentation explains how to run this Function in OpenFaaS.
+
+See https://docs.openfaas.com/tutorials/first-python-function/[OpenFaaS website] for more detailed and up to date documentation.
+
+== Prerequisites ==
+* Docker
+* https://docs.openfaas.com/cli/install/[OpenFaaS CLI]
+* OpenFaaS: to try in localhost, maybe deploy to https://github.com/openfaas/faasd[faasd]
+
+== Get the Idris 2 OpenFaaS template ==
+Follow the instructions in the https://github.com/ccfontes/openfaas-idris2-pack-template[openfaas-idris2-pack-template] repository.
+
+== Environment variables
+
+[source, bash]
+----
+export DOCKER_REGISTRY_IMG_PATH=<registry image path>
+----
+
+== Building and deploying your function ==
+
+To build and deploy the function to OpenFaaS, run the following command:
+[source]
+----
+faas up
+----
+
+== Testing your function ==
+
+Test the Function using the OpenFaaS UI or the following command:
+[source]
+----
+echo "test" | faas invoke Idris2Hello
+----

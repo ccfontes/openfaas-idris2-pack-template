@@ -2,5 +2,5 @@ version: '3.8'
 services:
   hello_world:
     build:
-      context: .
+      context: template
     command: [/bin/echo, 'Hello world']

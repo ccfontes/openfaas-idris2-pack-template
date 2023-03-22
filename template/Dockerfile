@@ -1,5 +1,5 @@
 # https://github.com/openfaas/of-watchdog
-FROM openfaas/of-watchdog:0.8.2 as watchdog
+FROM ghcr.io/openfaas/of-watchdog:0.9.11 as watchdog
 
 FROM ubuntu:20.04
 
@@ -7,7 +7,7 @@ RUN set -e
 
 ## Install Pack and Idris 2 ##
 
-RUN apt-get update && apt-get install --yes make gcc curl git chezscheme libgmp3-dev
+RUN apt-get update && apt-get install --yes curl chezscheme git make gcc libgmp3-dev
 
 WORKDIR /home/app
 
@@ -19,7 +19,7 @@ RUN sh -c "echo 'chezscheme' | bash ./idris2_install"
 
 ENV PATH $HOME/.pack/bin:$PATH
 
-RUN apt-get purge --yes make gcc curl git chezscheme libgmp3-dev && rm -rf /var/lib/apt/lists/*
+RUN apt-get purge --yes make gcc curl git libgmp3-dev && rm -rf /var/lib/apt/lists/*
 
 ## OpenFaaS ##
 
