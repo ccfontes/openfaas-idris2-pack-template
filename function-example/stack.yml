@@ -6,4 +6,4 @@ functions:
   idris-example:
     lang: idris2-streaming
     handler: ./idris2Hello
-    image: $DOCKER_REGISTRY_IMG_PATH
+    image: ${DOCKER_REGISTRY_IMG_PATH}

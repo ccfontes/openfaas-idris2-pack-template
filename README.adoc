@@ -18,7 +18,7 @@ faas template pull https://github.com/ccfontes/openfaas-idris2-pack-template
 Then create Idris 2 Functions as in the following command example:
 [source, bash]
 ----
-faas new --lang idris2-streaming MyIdris2Function
+faas new --lang idris2-streaming my-idris2-function
 ----
 
 == Function example ==
