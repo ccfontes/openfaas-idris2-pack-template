@@ -10,9 +10,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Docker registry path
-        env:
-          DOCKER_REGISTRY_IMG_PATH: ghcr.io/ccfontes/function-example:latest
       - name: Provision faasd
         run: |
           git clone https://github.com/openfaas/faasd --depth=1
@@ -21,6 +18,8 @@ jobs:
       - name: Provision function-example Function
         run: curl -sSL https://cli.openfaas.com | sudo -E sh
       - name: Provision function-example Function
+        env:
+          DOCKER_REGISTRY_IMG_PATH: ghcr.io/ccfontes/function-example:latest
         run: |
           git clone https://github.com/ccfontes/openfaas-idris2-pack-template.git
           cd openfaas-idris2-pack-template/function-example
