@@ -57,7 +57,7 @@ This information is for OpenFaaS template developers.
 Check this template's Idris build:
 [source, bash]
 ----
-idris2 ./Index.idr --exec main
+idris2 Index.idr --exec main
 ----
 
 Check this template's docker build:
