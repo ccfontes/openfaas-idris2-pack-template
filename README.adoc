@@ -10,13 +10,13 @@ Hopefully, this effort will bring Idris 2 closer to being production ready on a 
 == Usage ==
 
 To create Idris 2 Functions with this template, use the following command once:
-[source]
+[source, bash]
 ----
 faas template pull https://github.com/ccfontes/openfaas-idris2-pack-template
 ----
 
 Then create Idris 2 Functions as in the following command example:
-[source]
+[source, bash]
 ----
 faas new --lang idris2-streaming MyIdris2Function
 ----
@@ -25,11 +25,11 @@ faas new --lang idris2-streaming MyIdris2Function
 See the `function-example` directory to find a fully working example for an OpenFaaS Function using Idris 2.
 
 == TODO ==
-- [ ] Test everything
-- [ ] Pre-compile Idris 2 Function code
-- [ ] Import dependencies using `Pack` (maybe it's working as is)
-- [ ] Add e2e tests
-- [ ] Add e2e tests in CI
+- Test everything
+- Pre-compile Idris 2 Function code
+- Import dependencies using `Pack` (maybe it's working as is)
+- Add e2e tests
+- Add e2e tests in CI
 
 == Apple Silicon support ==
 I will not focus in supporting Apple Silicon Docker image. Someone might find useful the following information from the https://github.com/idris-lang/Idris2/blob/main/INSTALL.md#installing-chez-scheme-on-apple-silicon[Idris 2 documentation]:
@@ -55,13 +55,13 @@ sudo make install
 This information is for OpenFaaS template developers.
 
 Check this template's Idris build:
-[source]
+[source, bash]
 ----
 idris2 ./Index.idr --exec main
 ----
 
 Check this template's docker build:
-[source]
+[source, bash]
 ----
 docker-compose up
 ----

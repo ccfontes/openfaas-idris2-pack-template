@@ -26,7 +26,7 @@ export DOCKER_REGISTRY_IMG_PATH=<registry image path>
 == Building and deploying your function ==
 
 To build and deploy the function to OpenFaaS, run the following command:
-[source]
+[source, bash]
 ----
 faas up
 ----
@@ -34,7 +34,7 @@ faas up
 == Testing your function ==
 
 Test the Function using the OpenFaaS UI or the following command:
-[source]
+[source, bash]
 ----
 echo "test" | faas invoke Idris2Hello
 ----
