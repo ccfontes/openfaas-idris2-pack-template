@@ -1,4 +1,5 @@
 **/*.ttc
 **/*.ttm
 build/exec
+template/idris2-streaming/build
 
