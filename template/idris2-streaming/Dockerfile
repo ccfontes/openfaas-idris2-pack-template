@@ -20,10 +20,16 @@ RUN sh -c "echo 'chezscheme' | bash ./idris2_install"
 COPY Index.idr .
 RUN mkdir -p Function
 COPY function Function
+COPY function/pack.toml .
 
 ENV PATH $HOME/.pack/bin:$PATH
 
 RUN apt-get purge --yes make gcc curl git libgmp3-dev && rm -rf /var/lib/apt/lists/*
+
+## Build Function ##
+RUN pack install
+RUN idris2 Index.idr -o index
+RUN rm Index.idr
 
 ## OpenFaaS ##
 
@@ -35,7 +41,7 @@ RUN apt-get purge --yes make gcc curl git libgmp3-dev && rm -rf /var/lib/apt/lis
 # USER app:app
 
 ENV mode="streaming"
-ENV fprocess="idris2 ./Index.idr --exec main"
+ENV fprocess="pack run build/exec/index"
 
 EXPOSE 8080
 

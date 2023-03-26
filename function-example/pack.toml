@@ -1,0 +1,6 @@
+[dependencies]
+type = "github"
+url = "https://github.com/bobbbay/dinwiddy"
+commit = "61a81c5"
+ipkg = dinwiddy.ipkg"
+
