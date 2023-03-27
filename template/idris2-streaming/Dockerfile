@@ -21,15 +21,16 @@ COPY Index.idr .
 RUN mkdir -p Function
 COPY function Function
 COPY function/pack.toml .
+COPY function/function.ipkg .
 
 ENV PATH $HOME/.pack/bin:$PATH
 
 RUN apt-get purge --yes make gcc curl git libgmp3-dev && rm -rf /var/lib/apt/lists/*
 
 ## Build Function ##
-RUN pack install
-RUN idris2 Index.idr -o index
+RUN pack build function.ipkg
 RUN rm Index.idr
+RUN rm -rf Function
 
 ## OpenFaaS ##
 
@@ -41,7 +42,7 @@ RUN rm Index.idr
 # USER app:app
 
 ENV mode="streaming"
-ENV fprocess="pack run build/exec/index"
+# ENV fprocess="build/exec/index"
 
 EXPOSE 8080
 

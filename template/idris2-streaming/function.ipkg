@@ -1,0 +1,12 @@
+package function
+
+modules = Index
+        , Function.Handler
+
+sourcedir = "."
+
+executable = index
+
+main = Index
+
+-- pkgs = "dinwiddy"
