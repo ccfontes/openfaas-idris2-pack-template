@@ -42,7 +42,6 @@ RUN rm -rf Function
 # USER app:app
 
 ENV mode="streaming"
-# ENV fprocess="build/exec/index"
 
 EXPOSE 8080
 
