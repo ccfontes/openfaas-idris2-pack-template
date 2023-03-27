@@ -1,5 +1,6 @@
-[here.dinwiddy]
+[custom.nightly-220506.hashmap]
 type = "github"
 url = "https://github.com/bobbbay/dinwiddy"
 commit = "61a81c5"
 ipkg = "dinwiddy.ipkg"
+

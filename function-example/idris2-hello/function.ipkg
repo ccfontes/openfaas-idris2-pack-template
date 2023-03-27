@@ -9,4 +9,4 @@ executable = index
 
 main = Index
 
--- pkgs = "dinwiddy"
+pkgs = "dinwiddy"
