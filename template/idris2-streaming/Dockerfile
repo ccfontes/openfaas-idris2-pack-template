@@ -25,7 +25,7 @@ COPY function/function.ipkg .
 
 ENV PATH $HOME/.pack/bin:$PATH
 
-RUN apt-get purge --yes make gcc curl git libgmp3-dev && rm -rf /var/lib/apt/lists/*
+RUN apt-get purge --yes make gcc curl libgmp3-dev && rm -rf /var/lib/apt/lists/*
 
 ## Build Function ##
 RUN pack build function.ipkg
