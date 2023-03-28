@@ -1,0 +1,5 @@
+[hashmap]
+type   = "github"
+url    = "https://github.com/Z-snails/idris2-hashmap"
+commit = "cb97afaa7c5d79dcb85901c6f5f87bed906fed81"
+ipkg   = "hashmap.ipkg"
