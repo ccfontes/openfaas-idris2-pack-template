@@ -21,7 +21,7 @@ COPY Index.idr .
 RUN mkdir -p Function
 COPY function Function
 COPY function/function.ipkg .
-RUN rm Function/function.ipkg
+COPY function/pack.toml .
 
 ENV PATH $HOME/.pack/bin:$PATH
 
