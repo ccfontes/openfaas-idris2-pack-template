@@ -4,7 +4,7 @@ Hello world OpenFaaS Function in Idris 2.
 
 See the link:idris2-hello[idris2-hello] and link:idris2-pack[idris2-pack] directories to find the Idris 2 Function code examples.
 
-The following documentation explains how to run this Function in OpenFaaS.
+The following documentation explains how to run these Functions in OpenFaaS.
 
 See https://docs.openfaas.com/tutorials/first-python-function/[OpenFaaS website] for more detailed and up to date documentation.
 
@@ -25,21 +25,21 @@ faas template pull https://github.com/ccfontes/openfaas-idris2-pack-template
 
 [source, bash]
 ----
-export DOCKER_REGISTRY_IMG_ORG_PATH=<registry image path>
+export DOCKER_REGISTRY_IMG_ORG_PATH=<registry org path>
 ----
 Check link:function-examples/stack.yml[function-examples/stack.yml] to find out how `DOCKER_REGISTRY_IMG_ORG_PATH` is used.
 
 == Building and deploying your function ==
 
-To build and deploy the function to OpenFaaS, run the following command:
+To build and deploy the Functions to OpenFaaS, run the following command:
 [source, bash]
 ----
 faas up
 ----
 
-== Testing your function ==
+== Testing a function ==
 
-Test the Function using the OpenFaaS UI or the following command:
+Test a Function using the OpenFaaS UI or with the following command:
 [source, bash]
 ----
 echo "world" | faas invoke idris2-hello
