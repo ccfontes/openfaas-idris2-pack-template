@@ -2,8 +2,6 @@ package function
 
 modules = Index
         , Function.Handler
-        , Data.Hashmap
-        , Data.Hashmap
 
 sourcedir = "."
 

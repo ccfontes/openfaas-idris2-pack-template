@@ -1,16 +1,16 @@
 module Function.Handler
 
-import Data.Hashmap as Hashmap
+import Data.HashMap as HashMap
 import Dinwiddy.Array as Array
-import Data.Array (!)
+import Data.Vect
 
-value : Array.Array
-value = x : [[1, 2, 3]]
+value : Array 2 [1, 3] Int
+value = [[1, 2, 3]]
 
 export
 handler : String -> String
 handler key =
-  let hm = Hashmap.insert "key" (value ! 0) Hashmap.empty
-  case Hashmap.lookup key hm of
+  let hm = HashMap.insert "key" (index 0 value) HashMap.empty in
+  case HashMap.lookup key hm of
     Nothing => "Key not found"
     Just v => "Value for key: " ++ show v
