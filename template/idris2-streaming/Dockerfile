@@ -19,8 +19,9 @@ RUN sh -c "echo 'chezscheme' | bash ./idris2_install"
 
 COPY Index.idr .
 RUN mkdir -p Function
-#COPY function Function
-COPY Function/function.ipkg .
+COPY function Function
+COPY function/function.ipkg .
+RUN rm Function/function.ipkg
 
 ENV PATH $HOME/.pack/bin:$PATH
 
