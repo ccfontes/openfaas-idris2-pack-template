@@ -1,3 +1,7 @@
+= THIS REPOSITORY IS NO LONGER MAINTANED =
+
+The new repository can be found at: https://github.com/ccfontes/faas-idris2
+
 = OpenFaaS Idris 2 template =
 
 An https://github.com/openfaas[OpenFaaS] template for writing functions in https://www.idris-lang.org[Idris 2].
